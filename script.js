@@ -1,21 +1,19 @@
 // Write your JavaScript code here
 
-window.addEventListener("submit", function(event){
-   let pilotNameField = document.getElementById("pilotName");
-   let copilotNameField = document.getElementById("copilotName");
-      if (pilotNameField != "" || copilotNameField != ""){
+window.addEventListener("load", function(){
+   let form = document.querySelector("form");
+   form.addEventListener("submit", function(event){
+   let pilotNameField = document.querySelector("input[name= pilotName]");
+   let copilotNameField = document.querySelector("input[name= copilotName]");
+   let fuelLevelField = document.querySelector("input[name= fuelLevel]");
+   let cargoMassField = document.querySelector("input[name= cargoMass]");
+      if (pilotNameField.value === "" || copilotNameField.value === "" || isNaN(fuelLevelField.value) || isNaN(cargoMassField.value)){
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();
       }
    });
-window.addEventListener("submit", function(event){
-   let fuelLevelField = document.getElementById("fuelLevel");
-   let cargoMassField = document.getElementById("cargoMass");
-   if (isNaN(fuelLevelField.value) || isNaN(cargoMassField.value)){
-   alert("Make sure to enter valid information for each field!");
-   event.preventDefault();
-   }
 });
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
